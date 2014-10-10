@@ -1,0 +1,83 @@
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"> 
+<title>新闻菜单</title> 
+<style type="text/css"> 
+.titleStyle{ 
+background-color:#0E6AAF;color:#ffffff;border-top:1px solid #FFFFFF;font-size:9pt;cursor:hand; 
+} 
+.contentStyle{ 
+background-color:#ffffff;color:#0E6AAF;font-size:9pt; 
+} 
+
+a{ 
+color:blue; 
+} 
+body{ 
+font-size:9pt; 
+} 
+</style> 
+</head> 
+<body> 
+
+<script language="JavaScript"> 
+<!-- 
+var layerTop=0; //菜单顶边距 
+var layerLeft=5; //菜单左边距 
+var layerWidth=140; //菜单总宽 
+var titleHeight=20; //标题栏高度 
+var contentHeight=470; //内容区高度 
+var stepNo=10; //移动步数，数值越大移动越慢 
+
+var itemNo=0;runtimes=0; 
+document.write('<span id=itemsLayer style="position:absolute;overflow:hidden;border:1px solid #008800;left:'+layerLeft+';top:'+layerTop+';width:'+layerWidth+';">'); 
+
+function addItem(itemTitle,itemContent){ 
+itemHTML='<div id=item'+itemNo+' itemIndex='+itemNo+' style="position:relative;left:0;top:'+(-contentHeight*itemNo)+';width:'+layerWidth+';"><table width=100% cellspacing="0" cellpadding="0">'+ 
+'<tr><td height='+titleHeight+' onclick=changeItem('+itemNo+') class="titleStyle" align=center>'+itemTitle+'</td></tr>'+ 
+'<tr><td height='+contentHeight+' class="contentStyle">'+itemContent+'</td></tr></table></div>'; 
+document.write(itemHTML); 
+itemNo++; 
+} 
+//添加菜单标题和内容，可任意多项，注意格式： 
+addItem('欢迎','<BR>　　感谢使用<br>　　新闻发布系统！'); 
+addItem('管理员管理', '<center><a href="AddAdmin.aspx" target="mainFrame">添加用户</a> <BR><BR><a href="ManageAdmin.aspx" target="mainFrame">管理用户</a> <BR><BR></center>');
+addItem('分类管理','<center><a href="AddItem.aspx" target="mainFrame">添加栏目</a> <BR><BR><a href="ManageItem.aspx" target="mainFrame">栏目管理</a> <BR><BR><a href="AddClass.aspx" target="mainFrame">添加类别</a> <BR><BR><a href="ManageClass.aspx" target="mainFrame">类别管理</a> <BR><BR></center>'); 
+addItem('新闻管理','<center><a href="AddNews.aspx" target="mainFrame">新闻发布</a> <BR><BR><a href="ManageNews.aspx" target="mainFrame">新闻管理</a> <BR><BR></center>'); 
+addItem('管理日志','<center><a href="ManageLogs.aspx" target="mainFrame">日志管理</a> <BR><BR></center>'); 
+addItem('使用帮助','<center><a href="SysHelp.html" target="mainFrame">查看帮助</a></center>'); 
+
+document.write('</span>') 
+document.all.itemsLayer.style.height=itemNo*titleHeight+contentHeight; 
+
+toItemIndex=itemNo-1;onItemIndex=itemNo-1; 
+
+function changeItem(clickItemIndex){ 
+toItemIndex=clickItemIndex; 
+if(toItemIndex-onItemIndex>0) moveUp(); else moveDown(); 
+runtimes++; 
+if(runtimes>=stepNo){ 
+onItemIndex=toItemIndex; 
+runtimes=0;} 
+else 
+setTimeout("changeItem(toItemIndex)",10); 
+} 
+
+function moveUp(){ 
+for(i=onItemIndex+1;i<=toItemIndex;i++) 
+eval('document.all.item'+i+'.style.top=parseInt(document.all.item'+i+'.style.top)-contentHeight/stepNo;'); 
+} 
+
+function moveDown(){ 
+for(i=onItemIndex;i>toItemIndex;i--) 
+eval('document.all.item'+i+'.style.top=parseInt(document.all.item'+i+'.style.top)+contentHeight/stepNo;'); 
+} 
+changeItem(0); 
+//--> 
+</script> 
+</body> 
+</html> 
+
+
+
+

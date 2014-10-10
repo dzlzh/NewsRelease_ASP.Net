@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>
+      主页
+    </title>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <link rel="stylesheet" href="../Style/Style2.css" type="text/css"/>
+	<script language="javascript">
+	function getPage(newPage){
+	  document.main_show.location.replace(newPage);
+	}
+	</script>
+  </head>
+  <body background="images/main_bg.gif">
+  <table width="800" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tr>
+                <td width="10"><img src="images/bg_1.gif" width="10" height="11"></td>
+                <td width="812" background="image/bg_5.gif"></td>
+                <td width="10"><img src="images/bg_2.gif" width="10" height="11"></td>
+              </tr>
+              <tr>
+                <td height="519" background="images/bg_7.gif">&nbsp;</td>
+                <td align="center"  valign="top" bgcolor="#FFFFFF">
+				  
+				  <!--首页主体菜单 -->
+				  <table width="98%"  border="0" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" class="bg">
+                    <tr>
+                      <td height="25" colspan="4"><table width="100%" height="25"  border="0" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td align="center" background="imags/admin_bg_1.gif" class="baise"><table width="99%"  border="0" align="right" cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td><strong class="baise"><font color="#FFFFFF">后台资料</font></strong></td>
+                                </tr>
+                            </table></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                    <tr align="center" bgcolor="#F1F3F5">
+                      <td width="25%" height="60"><a href="#" onClick="getPage('basic.html');">
+					  <img src="images/32file_coun.gif" alt="网站配置" width="32" height="32" border="0" align="absmiddle"></a></td>
+                      <td width="25%"><a href="#" onClick="getPage('TodayNews.aspx');">
+					  <img src="images/32file_mb_ad.gif" alt="今日文章" width="32" height="32" border="0"></a></td>
+                      <td width="25%"><a href="#" onClick="getPage('MonthHits.aspx');">
+					  <img src="images/32file_cofig_month.gif" alt="分月统计" width="32" height="32" hspace="6" border="0" align="absmiddle"></a></td>
+                      <td width="25%"><a href="#" onClick="getPage('ModifyPassword.aspx');">
+					  <img src="images/32file_cofig_day.gif" alt="密码修改" width="32" height="32" hspace="6" border="0" align="absmiddle"></a></td>
+                    </tr>
+                    <tr align="center" bgcolor="#F1F3F5">
+                      <td height="25">网站配置</td>
+                      <td>今日文章</td>
+                      <td bgcolor="#F1F3F5">分月统计</td>
+                      <td>密码修改</td>
+                    </tr>
+                  </table>
+				  <!-- 结束 -->
+				  <br>
+				  <br>
+
+				  <!-- 框架页显示 -->
+				   <iframe name="main_show" src="basic.html" frameborder="0" scrolling="no" width="100%" HEIGHT="100%" ></iframe>
+				  <!-- 结束 -->
+				  
+				</td>
+                <td background="images/bg_8.gif">&nbsp;</td>
+              </tr>
+              <tr>
+                <td><img src="images/bg_3.gif" width="10" height="11"></td>
+                <td background="images/bg_6.gif"></td>
+                <td><img src="images/bg_4.gif" width="10" height="11"></td>
+              </tr>
+            </table>
+
+</body>
+</html>
+

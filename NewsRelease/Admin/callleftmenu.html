@@ -1,0 +1,130 @@
+<script language="javascript">
+function highlight(obj){
+	var hightlightBgColor = '#d6d6d6';
+		obj.onmouseover = function(){
+		var o = event.srcElement;
+
+		if(o.tagName=="TD"){
+			with(o.parentElement){
+				style.backgroundColor = hightlightBgColor;
+			}
+		}
+	}
+
+	obj.onmouseout = function(){
+		var o = event.srcElement;
+		if(o.tagName=="TD"){o.parentElement.style.backgroundColor = '';}
+	}
+}
+
+</script>
+<html>
+<head>
+<title>控制左菜单显隐</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+var LEFT_MENU_VIEW=0;
+function leftmenu_open()
+{
+   LEFT_MENU_VIEW=0;
+   TOP_MENU_VIEW=0;
+   leftmenu_ctrl();
+   topmenu_open();
+}
+function leftmenu_ctrl()
+{
+   if(LEFT_MENU_VIEW==0)
+   {
+      parent.fset2.cols="148,12,*";
+      LEFT_MENU_VIEW=1;
+      myarrow.src="images/lin.gif";
+   }
+   else
+   {
+      parent.fset2.cols="0,12,*";
+      LEFT_MENU_VIEW=0;
+      myarrow.src="images/lin_3.gif";
+   }
+}
+function changeImage(flag){
+	if(LEFT_MENU_VIEW==1)
+   	{
+   		if(flag==0)
+   			myarrow.src="images/lin_2.gif";
+   		else
+   			myarrow.src='images/lin.gif';
+   	}else{ 
+    		if(flag==0){
+   			myarrow.src="images/lin_4.gif";
+   		}
+   		
+		if(flag==1){
+   			myarrow.src=='images/lin_3.gif';
+   			
+   		}
+   	}
+}
+function setPointer(theRow, thePointerColor)
+{
+    if (typeof(theRow.style) == 'undefined' || typeof(theRow.cells) == 'undefined')
+    {
+        return false;
+    }
+
+    var row_cells_cnt=theRow.cells.length;
+    for (var c = 0; c < row_cells_cnt; c++)
+    {
+        theRow.cells[c].bgColor = thePointerColor;
+    }
+
+    return true;
+}
+
+var TOP_MENU_VIEW=0;
+function topmenu_open()
+{
+   TOP_MENU_VIEW=0;
+   topmenu_ctrl();
+}
+function topmenu_ctrl()
+{
+   if(TOP_MENU_VIEW==0)
+   {
+      parent.mainset.rows="64,*";
+      TOP_MENU_VIEW=1;
+      mytoparrow.src="images/up.gif";
+      //mytoparrow.title="点击隐藏顶部";
+   }
+   else
+   {
+      parent.mainset.rows="0,*";
+      TOP_MENU_VIEW=0;
+      mytoparrow.src="images/down.gif";
+      //mytoparrow.title="点击显示顶部";
+   }
+}
+</script>
+</head>
+<body topmargin="0" leftmargin="0" onLoad="leftmenu_ctrl()"  background="images/left_control.gif">
+ <table cellspacing="0" width="150%" height="100%" cellpadding="0" align="center" class="col" >
+   <tr>
+   	<td height="10" background="images/line.gif"></td>
+   </tr>
+    <tr>
+   	<td height="10"><a href="####" onClick="topmenu_ctrl();" title="点击隐藏顶部"><img id="mytoparrow" src="images/up.gif" width="6" border="0" alt="" title="点击隐藏顶部"></a></td>
+   </tr>
+   <tr>
+     <td>     	
+       <table cellspacing="0" width="100%" height="66" cellpadding="0">
+         <tr onClick="leftmenu_ctrl()">
+           <td style="cursor:hand" onMouseOver="changeImage(0);" onMouseOut="changeImage(1);">
+           	<img id="myarrow" src="" width="9" height="66" border="0">          
+           </td>
+         </tr>
+       </table>
+     </td>
+   </tr>
+</table>
+</body>
+</html>
+
