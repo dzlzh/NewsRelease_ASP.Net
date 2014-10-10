@@ -1,0 +1,18 @@
+<html>
+<head>
+<title></title>
+<script>
+function openNewWin(){
+	var win = window.open("index2.html","hanshare","left=0,top=0,height="+(screen.availHeight-20)+", width="+(screen.availWidth-10)+", toolbar=no , menubar=no, scrollbars=no,location=no, status=no");
+	if(win!=null)
+	{
+	    window.opener='anyone';
+		window.close();
+	}
+}
+</script>
+</head>
+<body onLoad="openNewWin()">
+</body>
+</html>
+
